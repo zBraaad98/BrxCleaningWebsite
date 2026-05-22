@@ -1,13 +1,431 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/tailwind.css" />
-    <title>Document</title>
+
+    <!-- AOS (scroll animations) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <title>Prime Cleaning</title>
   </head>
-  <body>
-    <h1 class="text-blue-600">Hello</h1>
+
+  <body class="bg-white text-slate-900 overflow-x-hidden">
+    <!-- WHATSAPP FLOAT -->
+    <a
+      href="https://wa.me/447495770484"
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition z-50"
+    >
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50">
+      <!-- FULL WIDTH BACKGROUND -->
+      <div
+        class="w-full bg-white/80 backdrop-blur-md border-b border-slate-100 shadow-sm"
+      >
+        <!-- INNER CONTAINER  -->
+        <div
+          class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+        >
+          <!-- Logo -->
+          <a href="#home">
+            <h1 class="text-2xl font-semibold tracking-tight">
+              <span class="text-indigo-600">Prime</span>
+              <span class="text-slate-800">Cleaning</span>
+            </h1>
+          </a>
+          <!-- Desktop Menu -->
+          <div
+            class="hidden sm:flex items-center gap-8 text-slate-600 font-medium"
+          >
+            <a href="#home" class="hover:text-indigo-600">Home</a>
+            <a href="#about" class="hover:text-indigo-600">About</a>
+            <a href="#services" class="hover:text-indigo-600">Services</a>
+
+            <a
+              href="https://wa.me/447495770484"
+              target="_blank"
+              class="bg-indigo-600 text-white px-5 py-2.5 rounded-full hover:bg-indigo-700"
+            >
+              Contact
+            </a>
+          </div>
+
+          <!-- Mobile Button -->
+          <button id="menu-btn" class="sm:hidden text-2xl text-indigo-600">
+            <i id="menu-icon" class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE DROPDOWN -->
+      <div
+        id="mobile-dropdown"
+        class="hidden sm:hidden bg-white border border-slate-100 rounded-2xl shadow-lg px-6 py-4 flex flex-col gap-2"
+      >
+        <a href="#home" class="py-2 hover:text-indigo-600">Home</a>
+        <a href="#about" class="py-2 hover:text-indigo-600">About</a>
+        <a href="#services" class="py-2 hover:text-indigo-600">Services</a>
+
+        <a
+          href="#contact"
+          class="mt-2 bg-indigo-600 text-white text-center py-3 rounded-full"
+        >
+          Contact
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section
+      id="home"
+      class="sm:pt-32 pt-24 pb-28 bg-white relative overflow-hidden"
+    >
+      <div
+        class="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center"
+      >
+        <div data-aos="fade-right">
+          <span
+            class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm mb-6"
+          >
+            <i class="fa-solid fa-shield-heart"></i> Trusted Cleaning Company
+          </span>
+
+          <h1 class="text-5xl font-semibold leading-tight mb-6">
+            Professional Cleaning for
+            <span class="text-indigo-600">Homes & Businesses</span>
+          </h1>
+
+          <p class="text-slate-600 text-lg mb-8">
+            Reliable, affordable, and spotless cleaning services across
+            Leicester.
+          </p>
+
+          <div class="flex gap-4 flex-wrap">
+            <a
+              href="https://wa.me/447495770484?text=Hi%20I%20am%20interested%20in%20a%20Free%20Quote%20"
+              class="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-sm"
+            >
+              Get Free Quote
+            </a>
+
+            <a
+              href="tel:+447495770484"
+              class="border border-slate-300 text-slate-700 px-6 py-3 rounded-full hover:border-indigo-600 hover:text-indigo-600 transition"
+            >
+              Call Now
+            </a>
+          </div>
+        </div>
+
+        <img
+          data-aos="fade-left"
+          src="/photos/cleaningphoto3.jpg"
+          class="rounded-3xl shadow-md w-full h-[500px] object-cover"
+        />
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-28 bg-slate-100">
+      <div
+        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center"
+      >
+        <!-- TEXT -->
+        <div data-aos="fade-up" class="order-1 lg:order-2">
+          <h2 class="text-4xl font-semibold mb-6 sm:pl-10">
+            <span class="text-indigo-600">About</span> Us
+          </h2>
+
+          <p class="text-slate-600 mb-4 sm:pl-10 leading-relaxed">
+            We are a trusted cleaning company in Leicester with 5+ years
+            experience.
+          </p>
+
+          <p class="text-slate-600 leading-relaxed sm:pl-10">
+            We deliver high-quality domestic and commercial cleaning with
+            attention to detail.
+          </p>
+        </div>
+
+        <!-- IMAGE -->
+        <img
+          data-aos="zoom-in"
+          src="/photos/aboutme.jpg"
+          class="order-2 lg:order-1 rounded-3xl shadow-sm w-full h-[420px] object-cover"
+        />
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 data-aos="fade-up" class="text-4xl font-semibold mb-4">
+          Our <span class="text-indigo-600">Services</span>
+        </h2>
+
+        <p class="text-slate-600 max-w-2xl mx-auto mb-14">
+          Everything you need to keep your home or business spotless.
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a
+            href="https://wa.me/447495770484?text=Hi%20I%20am%20interested%20in%20a%20Domestic%20Cleaning%20Service"
+            target="_blank"
+          >
+            <div
+              data-aos="zoom-in"
+              class="bg-white border border-slate-100 shadow-sm rounded-2xl p-7 hover:shadow-lg hover:-translate-y-1 transition cursor-pointer duration-200"
+            >
+              <i class="fa-solid fa-house text-indigo-600 text-2xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Domestic Cleaning</h3>
+              <p class="text-slate-600 text-sm">
+                Weekly and one-off home cleaning.
+              </p>
+            </div>
+          </a>
+          <a
+            href="https://wa.me/447495770484?text=Hi%20I%20am%20interested%20in%20a%20Deep%20Cleaning%20Service"
+            target="_blank"
+          >
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="100"
+              class="bg-white border border-slate-100 shadow-sm rounded-2xl p-7 hover:shadow-lg hover:-translate-y-1 transition cursor-pointer duration-200"
+            >
+              <i
+                class="fa-solid fa-pump-soap text-indigo-600 text-2xl mb-4"
+              ></i>
+              <h3 class="text-xl font-semibold mb-2">Deep Cleaning</h3>
+              <p class="text-slate-600 text-sm">
+                Full deep sanitisation cleaning.
+              </p>
+            </div>
+          </a>
+          <a
+            href="https://wa.me/447495770484?text=Hi%20I%20am%20interested%20in%20a%20Deep%20End%20Of%20Tenancy%20Service"
+            target="_blank"
+          >
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="200"
+              class="bg-white border border-slate-100 shadow-sm rounded-2xl p-7 hover:shadow-lg hover:-translate-y-1 transition cursor-pointer duration-200"
+            >
+              <i class="fa-solid fa-key text-indigo-600 text-2xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">End of Tenancy</h3>
+              <p class="text-slate-600 text-sm">Move-out cleaning service.</p>
+            </div>
+          </a>
+          <a
+            href="https://wa.me/447495770484?text=Hi%20I%20am%20interested%20in%20a%20Office%20Cleaning%20Service"
+            target="_blank"
+          >
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="300"
+              class="bg-white border border-slate-100 shadow-sm rounded-2xl p-7 hover:shadow-lg hover:-translate-y-1 transition cursor-pointer"
+            >
+              <i class="fa-solid fa-building text-indigo-600 text-2xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Office Cleaning</h3>
+              <p class="text-slate-600 text-sm">
+                Professional workplace cleaning.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-28 bg-slate-100">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 data-aos="fade-up" class="text-4xl font-semibold mb-14">
+          What Our <span class="text-indigo-600">Customers</span> Say
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            data-aos="fade-up"
+            class="bg-white p-6 rounded-2xl border border-slate-100"
+          >
+            <p class="text-indigo-600 text-3xl mb-4">★★★★★</p>
+            <p class="text-slate-600 mb-4">
+              “Absolutely spotless cleaning every time”
+            </p>
+            <h4 class="font-semibold">Sarah M.</h4>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="bg-white p-6 rounded-2xl border border-slate-100"
+          >
+            <p class="text-indigo-600 text-3xl mb-4">★★★★★</p>
+            <p class="text-slate-600 mb-4">
+              “Very reliable and professional service.”
+            </p>
+            <h4 class="font-semibold">James T.</h4>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            class="bg-white p-6 rounded-2xl border border-slate-100"
+          >
+            <p class="text-indigo-600 text-3xl mb-4">★★★★★</p>
+            <p class="text-slate-600 mb-4">
+              “Best cleaning company we’ve used in Leicester.”
+            </p>
+            <h4 class="font-semibold">Emily R.</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREAS COVERED -->
+    <section class="py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-14">
+          <h2 class="text-4xl font-semibold mb-4">
+            Areas We <span class="text-indigo-600">Cover</span>
+          </h2>
+
+          <p class="text-slate-600 max-w-2xl mx-auto">
+            Based in Leicester, we provide professional cleaning services across
+            surrounding areas for homes and businesses.
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <!-- LEFT -->
+          <div
+            data-aos="fade-right"
+            class="bg-slate-50 border border-slate-100 rounded-3xl p-8"
+          >
+            <!-- Location -->
+            <div class="flex items-start gap-4 mb-8">
+              <div
+                class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600"
+              >
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Based in Leicester</h3>
+
+                <p class="text-slate-600">
+                  Serving domestic and commercial clients throughout Leicester
+                  and nearby areas.
+                </p>
+              </div>
+            </div>
+
+            <!-- Areas -->
+            <div>
+              <h4 class="font-semibold text-lg mb-4">Areas Covered</h4>
+
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm"
+                >
+                  Leicester
+                </span>
+
+                <span
+                  class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm"
+                >
+                  Wigston
+                </span>
+
+                <span
+                  class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm"
+                >
+                  Oadby
+                </span>
+
+                <span
+                  class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm"
+                >
+                  Blaby
+                </span>
+
+                <span
+                  class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm"
+                >
+                  Glenfield
+                </span>
+
+                <span
+                  class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm"
+                >
+                  Loughborough
+                </span>
+
+                <span
+                  class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm"
+                >
+                  Hinckley
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT / MAP -->
+          <div
+            class="w-full overflow-hidden rounded-3xl border border-slate-200 shadow-sm"
+          >
+            <div class="relative w-full" style="padding-top: 56.25%">
+              <iframe
+                src="https://www.google.com/maps?q=Leicester&output=embed"
+                class="absolute top-0 left-0 w-full h-full"
+                style="border: 0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA -->
+    <section id="contact" class="py-28 bg-indigo-600 text-white text-center">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 data-aos="fade-up" class="text-4xl font-semibold mb-4">
+          Ready for a spotless space?
+        </h2>
+
+        <p class="mb-8 text-white/90">
+          Get a free quote today and book your cleaning service.
+        </p>
+
+        <a
+          data-aos="zoom-in"
+          class="bg-white text-indigo-600 px-8 py-4 rounded-full font-semibold hover:bg-slate-100 transition cursor-pointer"
+        >
+          Get Free Quote
+        </a>
+      </div>
+    </section>
+
+    <!-- AOS SCRIPT -->
     <script src="/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+        once: true,
+      });
+    </script>
   </body>
 </html>
