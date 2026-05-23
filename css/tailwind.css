@@ -669,6 +669,9 @@
   .text-cyan-700 {
     color: var(--color-cyan-700);
   }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
   .text-slate-400 {
     color: var(--color-slate-400);
   }

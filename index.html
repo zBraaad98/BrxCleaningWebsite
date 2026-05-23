@@ -715,7 +715,7 @@
             <h2 class="text-3xl font-semibold tracking-tight mb-5">
               <span class="text-cyan-400">Prime</span> Cleaning
             </h2>
-            <p class="text-slate-400 leading-relaxed max-w-lg mb-6">
+            <p class="text-slate-300 leading-relaxed max-w-lg mb-6">
               Professional domestic and commercial cleaning services across
               Leicester and surrounding areas. Reliable, affordable, and focused
               on delivering spotless results every time.
@@ -745,7 +745,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-5">Quick Links</h3>
-            <ul class="space-y-3 text-slate-400">
+            <ul class="space-y-3 text-slate-300">
               <li>
                 <a href="#home" class="hover:text-white transition">Home</a>
               </li>
@@ -764,7 +764,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-5">Contact</h3>
-            <ul class="space-y-4 text-slate-400">
+            <ul class="space-y-4 text-slate-300">
               <li class="flex items-center gap-3">
                 <i class="fa-solid fa-phone text-cyan-500"></i>
                 <a href="tel:+447700900123" class="hover:text-white transition"
@@ -789,13 +789,13 @@
         <div
           class="pt-6 flex flex-col items-center justify-center gap-3 text-sm text-slate-500 text-center"
         >
-          <p class="text-slate-400">
+          <p class="text-slate-300">
             © 2026 Prime Cleaning. All rights reserved.
           </p>
           <a
             href="https://instagram.com/brxwebstudio"
             target="_blank"
-            class="hover:text-white transition"
+            class="hover:text-white transition text-slate-300"
           >
             Website by
             <span class="text-cyan-500 font-medium">BrxWebStudio</span>
@@ -808,45 +808,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({ duration: 700, once: true });
-
-      document
-        .getElementById("menu-btn")
-        .addEventListener("click", function () {
-          const dropdown = document.getElementById("mobile-dropdown");
-          const icon = document.getElementById("menu-icon");
-          dropdown.classList.toggle("hidden");
-          icon.classList.toggle("fa-bars");
-          icon.classList.toggle("fa-xmark");
-        });
-
-      document.querySelectorAll("#mobile-dropdown a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          document.getElementById("mobile-dropdown").classList.add("hidden");
-          document.getElementById("menu-icon").classList.add("fa-bars");
-          document.getElementById("menu-icon").classList.remove("fa-xmark");
-        });
-      });
-
-      function toggleFaq(btn) {
-        const body = btn.nextElementSibling;
-        const icon = btn.querySelector("i");
-        const isOpen = !body.classList.contains("hidden");
-        document.querySelectorAll(".faq-body").forEach(function (el) {
-          el.classList.add("hidden");
-        });
-        document
-          .querySelectorAll(".faq-body + button i, button + .faq-body")
-          .forEach(function () {});
-        document
-          .querySelectorAll('[onclick="toggleFaq(this)"] i')
-          .forEach(function (i) {
-            i.style.transform = "";
-          });
-        if (!isOpen) {
-          body.classList.remove("hidden");
-          icon.style.transform = "rotate(180deg)";
-        }
-      }
     </script>
   </body>
 </html>
