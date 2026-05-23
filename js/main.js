@@ -21,3 +21,24 @@ document.querySelectorAll("#mobile-dropdown a").forEach((link) => {
     menuIcon.classList.add("fa-bars");
   });
 });
+
+function toggleFaq(btn) {
+  const body = btn.nextElementSibling;
+  const icon = btn.querySelector("i");
+  const isOpen = !body.classList.contains("hidden");
+  document.querySelectorAll(".faq-body").forEach(function (el) {
+    el.classList.add("hidden");
+  });
+  document
+    .querySelectorAll(".faq-body + button i, button + .faq-body")
+    .forEach(function () {});
+  document
+    .querySelectorAll('[onclick="toggleFaq(this)"] i')
+    .forEach(function (i) {
+      i.style.transform = "";
+    });
+  if (!isOpen) {
+    body.classList.remove("hidden");
+    icon.style.transform = "rotate(180deg)";
+  }
+}
