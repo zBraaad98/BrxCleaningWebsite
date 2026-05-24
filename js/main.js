@@ -2,6 +2,7 @@ const menuBtn = document.getElementById("menu-btn");
 const mobileDropdown = document.getElementById("mobile-dropdown");
 const menuIcon = document.getElementById("menu-icon");
 
+// nav bar
 menuBtn.addEventListener("click", () => {
   mobileDropdown.classList.toggle("hidden");
 
@@ -22,6 +23,7 @@ document.querySelectorAll("#mobile-dropdown a").forEach((link) => {
   });
 });
 
+// FAQ section
 function toggleFaq(btn) {
   const body = btn.nextElementSibling;
   const icon = btn.querySelector("i");
@@ -41,4 +43,14 @@ function toggleFaq(btn) {
     body.classList.remove("hidden");
     icon.style.transform = "rotate(180deg)";
   }
+}
+
+// map load
+
+function loadGoogleMap() {
+  var frame = document.getElementById("google-map-frame");
+  var placeholder = document.getElementById("map-placeholder");
+  frame.src = "https://www.google.com/maps?q=Leicester&output=embed";
+  frame.classList.remove("hidden");
+  placeholder.classList.add("hidden");
 }

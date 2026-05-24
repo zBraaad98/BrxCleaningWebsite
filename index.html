@@ -569,15 +569,82 @@
             <div
               class="w-full overflow-hidden rounded-3xl border border-slate-200 shadow-sm"
             >
-              <div class="relative w-full" style="padding-top: 56.25%">
+              <div
+                class="relative w-full overflow-hidden rounded-3xl border border-slate-200 shadow-sm"
+                style="padding-top: 56.25%"
+              >
+                <!-- BLURRED PLACEHOLDER -->
+                <div
+                  id="map-placeholder"
+                  class="absolute inset-0 flex flex-col items-center justify-center gap-4"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #ecfeff 0%,
+                      #cffafe 50%,
+                      #a5f3fc 100%
+                    );
+                  "
+                >
+                  <!-- Blurred fake map lines for visual effect -->
+                  <div
+                    style="
+                      position: absolute;
+                      inset: 0;
+                      opacity: 0.15;
+                      filter: blur(2px);
+                      background:
+                        repeating-linear-gradient(
+                          0deg,
+                          transparent,
+                          transparent 40px,
+                          #0e7490 40px,
+                          #0e7490 41px
+                        ),
+                        repeating-linear-gradient(
+                          90deg,
+                          transparent,
+                          transparent 60px,
+                          #0e7490 60px,
+                          #0e7490 61px
+                        );
+                    "
+                  ></div>
+
+                  <div class="relative z-10 text-center px-6">
+                    <div
+                      class="w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-3"
+                    >
+                      <i
+                        class="fa-solid fa-map-location-dot text-cyan-700 text-xl"
+                      ></i>
+                    </div>
+                    <p class="text-slate-700 font-semibold text-sm mb-1">
+                      Leicester & Surrounding Areas
+                    </p>
+
+                    <button
+                      onclick="loadGoogleMap()"
+                      class="bg-cyan-700 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-cyan-800 transition shadow-sm"
+                    >
+                      <i class="fa-brands fa-google mr-2"></i>Load Google Map
+                    </button>
+                    <p class="text-slate-400 text-xs mt-3">
+                      Google Maps may set cookies when loaded
+                    </p>
+                  </div>
+                </div>
+
+                <!-- GOOGLE MAP (hidden until clicked) -->
                 <iframe
-                  title="Map of The area we cover"
-                  src="https://www.google.com/maps?q=Leicester&output=embed"
-                  class="absolute top-0 left-0 w-full h-full"
+                  id="google-map-frame"
+                  class="absolute top-0 left-0 w-full h-full hidden"
                   style="border: 0"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
+                  title="Map of the area we cover"
+                >
+                </iframe>
               </div>
             </div>
           </div>
