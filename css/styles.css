@@ -2,10 +2,10 @@
 
 @theme {
   --color-primary: #1d4ed8;
-  --color-button: #1e3a8a;
-  --color-hover-button: #172554;
+  --color-cta: #1e3a8a;
+  --color-cta-hover: #172554;
 
-  --color-dimmed-text: #0f172a;
+  --color-muted: #0f172a;
 
   --color-background: #ffffff;
   --color-secondary-background: #f1f5f9;
